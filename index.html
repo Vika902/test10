@@ -19,5 +19,42 @@
 </div>
 </div>
             <div class="footer"><h1>Info o autorze:<a href="https://vika902.github.io/test6/">Info o autorze</a></h1></div>
+     <script>
+        // Funkcja do aktualizacji daty i godziny
+        function aktualizujDateIGodzine() {
+            var teraz = new Date(); // Pobierz aktualną datę i godzinę
+            var rok = teraz.getFullYear();
+            var miesiac = teraz.getMonth() + 1; // Dodaj 1, ponieważ miesiące są numerowane od 0
+            var dzien = teraz.getDate();
+            var godzina = teraz.getHours();
+            var minuta = teraz.getMinutes();
+            var sekunda = teraz.getSeconds();
+
+            // Formatuj datę i godzinę, dodając zero przed jednocyfrowymi liczbami
+            if (miesiac < 10) {
+                miesiac = "0" + miesiac;
+            }
+            if (dzien < 10) {
+                dzien = "0" + dzien;
+            }
+            if (godzina < 10) {
+                godzina = "0" + godzina;
+            }
+            if (minuta < 10) {
+                minuta = "0" + minuta;
+            }
+            if (sekunda < 10) {
+                sekunda = "0" + sekunda;
+            }
+
+            // Wyświetl datę i godzinę na stronie
+            document.getElementById("czas").textContent = rok + "-" + miesiac + "-" + dzien + " " + godzina + ":" + minuta + ":" + sekunda;
+        }
+
+        // Uruchom funkcję aktualizacji daty i godziny co sekundę
+        setInterval(aktualizujDateIGodzine, 1000);
+
+        // Wywołaj funkcję aktualizacji daty i godziny, aby wyświetlić je od razu
+        aktualizujDateIGodzine();</script>
 </body>
 </html>
